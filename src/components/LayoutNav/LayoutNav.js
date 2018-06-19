@@ -1,3 +1,4 @@
+import { window, document } from 'browser-monads';
 import React, { Component } from 'react';
 
 class LayoutNav extends Component {
