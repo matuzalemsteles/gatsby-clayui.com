@@ -11,8 +11,8 @@ title: "Introduction"
 To test the Clay components for web with a minimal configuration, load the CSS and JS from the JSDelivr.
 
 ```html
-https://cdn.jsdelivr.net/npm/clay/lib/css/atlas.css
-https://cdn.jsdelivr.net/npm/clay/lib/js/clay.js
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/clay/lib/css/atlas.css">
+<script src="https://cdn.jsdelivr.net/npm/clay/lib/js/clay.js"></script>
 ```
 
 Then include some element in the HTML page where you want to render the component...
@@ -38,7 +38,7 @@ new clay.ClayButton(
 
 Let's use the [webpack](https://webpack.js.org/) to demonstrate how you will group our JavaScript and Sass. First create a folder with a name you want and then create a `package.json` that looks like this:
 
-```
+```json
 {
     "scripts": {
         "start": "webpack-dev-server"
@@ -62,7 +62,7 @@ You will need all of these dependencies installed in your project:
 
 To install all these dependencies consider running this command:
 
-```shell
+```bash
 npm install --save-dev babel-core babel-loader babel-preset-env webpack webpack-dev-server webpack-cli css-loader sass-loader node-sass extract-loader file-loader
 ```
 
@@ -84,7 +84,7 @@ In order to demonstrate this our example consider creating an `index.html` file.
 
 Create a simple Sass `app.scss` file:
 
-```text/x-scss
+```scss
 body {
     color: red;
 }
@@ -145,7 +145,7 @@ module.exports = {
 
 To test the webpack configuration, run:
 
-```shell
+```bash
 npm run start
 ```
 
@@ -155,7 +155,7 @@ And it opens `http://localhost:8080` in the browser. You should see `Hello World
 
 In order to install Clay you can choose to install the separate packages or install with all packages, see [Importing the JS Component](/docs/getting_started/importing-the-js-component.html). To proceed with this we will install only the `ClayBadge` package, consider running the command to do this:
 
-```shell
+```bash
 npm install --save clay-badge
 ```
 
@@ -172,7 +172,7 @@ If you look at the screen you will see the same thing as before, but we will go 
 
 To install `clay-css`, consider running the command:
 
-```shell
+```bash
 npm install --save clay-css
 ```
 
