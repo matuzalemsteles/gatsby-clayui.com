@@ -4,6 +4,7 @@ const path = require('path');
 module.exports = {
     pathPrefix: '/static',
     plugins: [
+        'gatsby-plugin-react-next',
         {
             resolve: 'gatsby-plugin-sass',
             options: {
@@ -29,6 +30,12 @@ module.exports = {
             resolve: 'gatsby-transformer-remark',
             options: {
                 plugins: [
+                    {
+                        resolve: 'gatsby-remark-component',
+                        options: {
+                            components: ['clay-chart']
+                        }
+                    },
                     {
                         resolve: 'gatsby-remark-images',
                     },
