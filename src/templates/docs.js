@@ -6,6 +6,7 @@ import docsSidebar from '../data/sidebars/doc-links.yaml'
 import Sidebar from '../components/Sidebar';
 import CodeTabs from '../components/CodeTabs';
 import Graph from '../components/Graph';
+import CodeClipboard from '../components/CodeClipboard';
 
 const renderAst = new rehypeReact({
     createElement: React.createElement,
@@ -15,14 +16,17 @@ const renderAst = new rehypeReact({
 export default class Docs extends Component {
     componentDidMount() {
         this._codeTabs = new CodeTabs();
+        this._codeClipboard = new CodeClipboard();
     }
 
     componentWillUnmount() {
         this._codeTabs = null;
+        this._codeClipboard = null;
     }
 
     render() {
-        const { data, location } = this.props;
+        const { data, location, pathContext } = this.props;
+        const { htmlASTTreated } = pathContext;
         const { markdownRemark } = data;
         const { frontmatter, htmlAst, excerpt, timeToRead } = markdownRemark;
         const title = `${frontmatter.title} - Clay`;
@@ -54,7 +58,7 @@ export default class Docs extends Component {
                         <div className="clay-site-container container-fluid">
                             <div className="row">
                                 <div className="col-md-12">
-                                    {renderAst(htmlAst)}
+                                    {renderAst(JSON.parse(htmlASTTreated))}
                                 </div>
                             </div>
                         </div>

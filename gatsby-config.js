@@ -32,6 +32,9 @@ module.exports = {
             options: {
                 plugins: [
                     {
+                        resolve: 'gatsby-remark-foreach-icons'
+                    },
+                    {
                         resolve: 'gatsby-remark-component',
                         options: {
                             components: ['clay-chart']
@@ -45,6 +48,9 @@ module.exports = {
                         options: {
                             classPrefix: 'gatsby-code-'
                         }
+                    },
+                    {
+                        resolve: 'gatsby-remark-use-clipboard'
                     }
                 ]
             }
